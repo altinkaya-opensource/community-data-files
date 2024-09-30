@@ -16,7 +16,7 @@ class ResPartner(models.Model):
     nace_product_categ_ids = fields.Many2many('product.category', string="NACE Target Product Category",
                                               compute="_compute_nace_product_categ")
 
-    @api.multi
+
     def _compute_nace_product_categ(self):
         for partner in self:
             lst = self.env['product.category']
