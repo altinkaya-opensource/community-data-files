@@ -28,6 +28,17 @@ class ResPartnerNace(models.Model):
         comodel_name="res.partner", inverse_name="nace_id", string="Partners"
     )
 
+    product_categ_ids = fields.Many2many('product.category', string="Category")
+    order = fields.Integer(default=1)
+    level = fields.Integer(default=1)
+    includes = fields.Text(string="This item Includes", translate=True)
+    also_includes = fields.Text(string="This item Also Includes", translate=True)
+    excludes = fields.Text(string="This item Excludes", translate=True)
+    UKSIC = fields.Char(string="UKSIC", translate=False)
+    USSIC = fields.Char(string="USSIC", translate=False)
+    NAICS = fields.Char(string="NAICS", translate=False)
+    ISIC = fields.Char(string="International SIC", translate=False)
+
     @api.depends("code", "name")
     def _compute_complete_name(self):
         for category in self:
