@@ -9,13 +9,28 @@
         <field name="model">res.partner</field>
         <field name="inherit_id" ref="base.view_partner_form"/>
         <field name="arch" type="xml">
-            <xpath expr="//field[@name='category_id']" position="after">
-                <field name="nace_id"
-                       options="{'always_reload': True}"/>
-                <field name="secondary_nace_ids" widget="many2many_tags"/>
+             <xpath expr="//page[@name='sales_purchases']" position="after">
+                <page name="NACE" string="NACE">
+
+                        <group string="Main Sector">
+
+                            <field name="nace_id" nolabel="1" placeholder="Main Nace Sector" />
+
+                        </group>
+                        <group string="Other NACE Worksectors">
+                            <field name="secondary_nace_ids" nolabel="1" >
+                            </field>
+                        </group>
+                        <group string="Target Product Category">
+                            <field name="nace_product_categ_ids" nolabel="1"/>
+                        </group>
+                    </page>
             </xpath>
         </field>
     </record>
+
+
+
 
 
 </odoo>

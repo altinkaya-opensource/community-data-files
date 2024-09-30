@@ -21,10 +21,30 @@
                             <field name="name"/>
                             <field name="parent_id"
                                    options="{'always_reload': True}"/>
+
+
+
                         </group>
                         <group>
                             <field name="code"/>
+                            <field name="order" />
+                            <field name="level" />
+                            <field name="UKSIC" />
+                            <field name="USSIC" />
+                            <field name="NAICS" />
+                            <field name="ISIC" />
+
                         </group>
+
+                         </group>
+                    <group>
+                            <field name="includes" />
+                            <field name="also_includes" />
+                            <field name="excludes" />
+                            <field name="product_categ_ids" />
+                            <field name="partner_ids" />
+                            <field name="child_ids" />
+
                     </group>
                 </sheet>
             </form>
